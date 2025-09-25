@@ -102,7 +102,7 @@ class Coil:
         Bx_arrays = np.array([])
         
         for pos in positions:
-            integral, _ = sp.integrate.quad(lambda phi: self.BS_integrand_x(phi, pos)[0], 0, 2*pi)
+            integral, _ = sp.integrate.quad(lambda phi: self.BS_integrand_x(phi, pos), 0, 2*pi)
             Bx = (mu0_mod*I*N) * integral
             Bx_arrays = np.append(Bx_arrays, Bx)
         return Bx_arrays
@@ -116,7 +116,7 @@ class Coil:
         By_arrays = np.array([])
         
         for pos in positions:
-            integral, _ = sp.integrate.quad(lambda phi: self.BS_integrand_y(phi, pos)[1], 0, 2*pi)
+            integral, _ = sp.integrate.quad(lambda phi: self.BS_integrand_y(phi, pos), 0, 2*pi)
             By = (mu0_mod*I*N) * integral
             By_arrays = np.append(By_arrays, By)
         return By_arrays
@@ -130,7 +130,7 @@ class Coil:
         Bz_arrays = np.array([])
         
         for pos in positions:
-            integral, _ = sp.integrate.quad(lambda phi: self.BS_integrand_z(phi, pos)[2], 0, 2*pi)
+            integral, _ = sp.integrate.quad(lambda phi: self.BS_integrand_z(phi, pos), 0, 2*pi)
             Bz = (mu0_mod*I*N) * integral
             Bz_arrays = np.append(Bz_arrays, Bz)
         return Bz_arrays
