@@ -23,5 +23,3 @@ def coil_basis(n):
         ey = np.array([0, n[2], -n[1]])
     ex = np.cross(ey, ez)
     return ex, ey, ez
-
-#to-do: test
